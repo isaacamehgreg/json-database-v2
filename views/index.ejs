@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Json DB</title>
+	<meta charset="UTF-8">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+ 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+	create new +
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		
+		  <h5 class="modal-title" id="exampleModalCenterTitle">Add new +</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<form action="/create" method="post">
+		<div class="modal-body">
+		 
+
+			<table>
+				
+				<tbody>
+				<tr><th class="column3">ID</th><td class="column1"><input required type="text" name="id" id="id" ></td></tr>	
+				<tr><th class="column3">Lat</th><td class="column1"><input required type="number" name="lat" ></td></tr>	
+				<tr><th class="column3">Lng</th><td class="column1"><input required type="number" name="lng" ></td></tr>	
+				<tr><th class="column3">Title</th><td class="column1"><input required type="text" name="title" ></td></tr>	
+				<tr><th class="column3">Name</th><td class="column1"><input  required type="text" name="name" ></td></tr>	
+				<tr><th class="column3">Country</th><td class="column1"><input  required  type="text" name="country"></td></tr>	
+				<tr><th class="column3">State</th><td class="column1"><input  required type="text" name="state" ></td></tr>	
+				<tr><th class="column3">Region</th><td class="column1"><input type="text" required  name="region" ></td></tr>	
+				<tr><th class="column3">City</th><td class="column1"><input type="text" required  name="city" ></td></tr>	
+				<tr><th class="column3">Street</th><td class="column1"><input type="text"  required name="street" ></td></tr>	
+				<tr><th class="column3">Zipcode</th><td class="column1"><input type="text" required  name="zipcode" ></td></tr>	
+				<tr><th class="column3">Image</th> <td class="column1"><input type="url" required  name="image" ></td></tr>	
+				<tr><th class="column3">Kiosk_id</th><td class="column1"><input type="text"  required name="k_id" id=""></td></tr>	
+				<tr><th class="column3">ATM Type</th><td class="column1"><input type="text" required  name="atmtype" id="" ></td></tr>
+
+			 
+					<tr>
+
+						<div class="row" >
+							<table>
+								<tr><td>Images</td></tr>
+								<tr><td>images</td><td>Url</td></tr>
+								<tr><td>1</td><td><input type="url" name="i1" id="" ></td></tr>
+								<tr><td>2</td><td><input type="url" name="i2" id="" ></td></tr>
+								<tr><td>3</td><td><input type="url" name="i3" id="" ></td></tr>
+								<tr><td>4</td><td><input type="url" name="i4" id="" ></td></tr>
+								<tr><td>5</td><td><input type="url" name="i5" id="" ></td></tr>
+
+							</table>
+						</div>
+		
+						
+					
+					</tr>
+
+		
+				<tr><th class="column3">Zoom</th><td><input type="number" name="zoom" id=""></td></tr>
+	
+
+				<tr>
+
+					<div class="row" >
+						<table>
+							<tr><td>Hours </td></tr>
+							<tr><td>Day</td><td>start</td><td>stop</td></tr>
+							<tr><td>Monday</td><td><input type="number" required  name="mon_start" id="" ></td><td><input type="number" required  name="mon_stop" id="" ></td></tr>
+							<tr><td>Tuesday</td><td><input type="number" required  name="tue_start" id="" ></td><td><input type="number" required  name="tue_stop" id="" ></td></tr>
+							<tr><td>Wedneday</td><td><input type="number" required  name="wed_start" id="" ></td><td><input type="number"  required name="wed_stop" id="" ></td></tr>
+							<tr><td>Thursday</td><td><input type="number" required  name="thu_start" id="" ></td><td><input type="number"  required name="thu_stop" id="" ></td></tr>
+							<tr><td>Friday</td><td><input type="number"  required name="fri_start" id="" ></td><td><input type="number"  required name="fri_stop" id="" ></td></tr>
+							<tr><td>saturday</td><td><input type="number" required  name="sat_start" id="" ></td><td><input type="number" required  name="sat_stop" id="" ></td></tr>
+							<tr><td>Sunday</td><td><input type="number"  required name="sun_start" id="" ></td><td><input type="number"  required name="sun_stop" id="" ></td></tr>
+						</table>
+					</div>
+	
+				
+				</tr>		
+		     
+
+		
+			
+				<tr>
+
+				<div class="row" >
+                    <table>
+						<tr><td>Hours Obj</td></tr>
+						<tr><td>Day</td><td>Open</td><td>Close</td><td>Open 24</td></tr>
+						<tr><td>Monday</td><td><input type="text" required  name="mon_open" id="" ></td><td><input type="text" required  name="mon_close" id="" ></td><td><select name="mon24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Tuesday</td><td><input type="text" required  name="tue_open" id="" ></td><td><input type="text" required  name="tue_close" id="" ></td><td><select name="tue24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Wedneday</td><td><input type="text" required  name="wed_open" id="" ></td><td><input type="text"  required name="wed_close" id="" ></td><td><select name="wed24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Thursday</td><td><input type="text" required  name="thu_open" id="" ></td><td><input type="text" required  name="thu_close" id="" ></td><td><select name="thu24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Friday</td><td><input type="text"  required name="fri_open" id="" ></td><td><input type="text"  required name="fri_close" id="" ></td><td><select name="fri24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>saturday</td><td><input type="text" required  name="sat_open" id="" ></td><td><input type="text"  required name="sat_close" id="" ></td><td><select name="sat24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Sunday</td><td><input type="text" required  name="sun_open" id="" ></td><td><input type="text" required  name="sun_close" id="" ></td><td><select name="sun24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+
+					</table>
+				</div>
+
+			
+			    </tr>		
+			   
+				
+				</tbody>
+			</table>
+
+
+
+		</div>
+		<div class="modal-footer">
+		  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+		  <button type="submit" class="btn btn-primary">Save changes</button>
+		</div>
+		</form>
+	  </div>
+	</div>
+  </div>
+
+<!-- 
+create modal ends -->
+
+
+
+	    <br>  
+		        	<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">ID</th>
+								<th class="column2">Name</th>
+								<th class="column3">Country</th>
+								<th class="column4">City</th>
+								<th class="column5">ATM Type</th>
+								<th class="column6">More</th>
+								<th class="column6">edit</th>
+							</tr>
+						</thead>
+						<tbody>
+						<%	for(var i = 0; i< datas.length ; i++   ){  %>
+								<tr>
+									<td class="column1"><%= datas[i].id %></td>
+									<td class="column2"><%= datas[i].name %></td>
+									<td class="column3"><%= datas[i].country %></td>
+									<td class="column4"><%= datas[i].city %></td>
+									<td class="column5"><%= datas[i].atmtype %></td>
+									<td class="column6"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter<%=i%>">view/edit</button></td>
+									<td class="column7"><a type="button" class="btn btn-danger" href="/<%=i%>/delete" >delete</a></td>
+									
+								</tr>
+						   <%	} %>
+						</tbody>
+					</table>
+
+
+	    <br>
+
+	         	<br>
+
+
+<!-- /////////////////////////////////////////////// -->
+
+
+
+
+
+
+<!-- Button trigger modal -->
+
+<%	for(var i = 0; i< datas.length ; i++   ){  %>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter<%=i%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		
+		  <h5 class="modal-title" id="exampleModalCenterTitle"><%= datas[i].name %></h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<form action="/<%=i%>/edit" method="post">
+		<div class="modal-body">
+		 
+
+			<table>
+				
+				<tbody>
+				<tr><th class="column3">ID</th><td class="column1"><input type="text" name="id"  value="<%= datas[i].id %>"></td></tr>	
+				<tr><th class="column3">Lat</th><td class="column1"><input type="number" name="lat"  value="<%= datas[i].lat %>"></td></tr>	
+				<tr><th class="column3">Lng</th><td class="column1"><input type="number" name="lng"  value="<%= datas[i].lng %>" ></td></tr>	
+				<tr><th class="column3">Title</th><td class="column1"><input type="text" name="title"  value="<%= datas[i].title %>" ></td></tr>	
+				<tr><th class="column3">Name</th><td class="column1"><input type="text" name="name"  value="<%= datas[i].name %>"></td></tr>	
+				<tr><th class="column3">Country</th><td class="column1"><input type="text" name="country"  value="<%= datas[i].country %>"></td></tr>	
+				<tr><th class="column3">State</th><td class="column1"><input type="text" name="state"  value="<%= datas[i].state %>"></td></tr>	
+				<tr><th class="column3">Region</th><td class="column1"><input type="text" name="region"  value="<%= datas[i].region %>"></td></tr>	
+				<tr><th class="column3">City</th><td class="column1"><input type="text" name="city"  value="<%= datas[i].city %>"></td></tr>	
+				<tr><th class="column3">Street</th><td class="column1"><input type="text" name="street"  value="<%= datas[i].street %>"></td></tr>	
+				<tr><th class="column3">Zipcode</th><td class="column1"><input type="text" name="zipcode"  value="<%= datas[i].zipcode %>"></td></tr>	
+				<tr><th class="column3">Image</th> <td class="column1"><input type="url" name="image"  value="<%= datas[i].images %>"></td></tr>	
+				<tr><th class="column3">Kiosk_id</th><td class="column1"><input type="text" name="k_id" id=""  value="<%= datas[i].kiosk_id %>" ></td></tr>	
+				<tr><th class="column3">ATM Type</th><td class="column1"><input type="text" name="atmtype" id=""  value="<%= datas[i].atmtype %>"></td></tr>
+
+			 
+					<tr>
+
+						<div class="row" >
+							<table>
+								<tr><td>Images</td></tr>
+								<tr><td>images</td><td>Url</td></tr>
+								<tr><td>1</td><td><input type="url" name="i1" id=""  value="<%= datas[i]["images"][0] %>" ></td></tr>
+								<tr><td>2</td><td><input type="url" name="i2" id=""  value="<%= datas[i]["images"][1] %>" ></td></tr>
+								<tr><td>3</td><td><input type="url" name="i3" id=""  value="<%= datas[i]["images"][2] %>"></td></tr>
+								<tr><td>4</td><td><input type="url" name="i4" id=""  value="<%= datas[i]["images"][3] %>"></td></tr>
+								<tr><td>5</td><td><input type="url" name="i5" id=""  value="<%= datas[i]["images"][4] %>"></td></tr>
+
+							</table>
+						</div>
+		
+						
+					
+					</tr>
+
+		
+				<tr><th class="column3">Zoom</th><td><input type="number" name="zoom" id=""  value="<%= datas[i].zoom %>"></td></tr>
+	
+
+				<tr>
+
+					<div class="row" >
+						<table>
+							<tr><td>Hours </td></tr>
+							<tr><td>Day</td><td>start</td><td>stop</td></tr>
+							<tr><td>Monday</td><td><input type="text" name="mon_start" id=""   value="<%= datas[i]["hours"][0][0][0] %>" ></td><td><input type="text" name="mon_stop" id="" value="<%= datas[i]["hours"][0][0][1] %>" ></td></tr>
+							<tr><td>Tuesday</td><td><input type="text" name="tue_start" id=""  value="<%= datas[i]["hours"][1][0][0] %>"  ></td><td><input type="text" name="tue_stop" id="" value="<%= datas[i]["hours"][1][0][1] %>"></td></tr>
+							<tr><td>Wedneday</td><td><input type="text" name="wed_start" id="" value="<%= datas[i]["hours"][2][0][0] %>" ></td><td><input type="text" name="wed_stop" id="" value="<%= datas[i]["hours"][2][0][1] %>" ></td></tr>
+							<tr><td>Thursday</td><td><input type="text" name="thu_start" id="" value="<%= datas[i]["hours"][3][0][0] %>" ></td><td><input type="text" name="thu_stop" id="" value="<%= datas[i]["hours"][3][0][1] %>"></td></tr>
+							<tr><td>Friday</td><td><input type="text" name="fri_start" id=""   value="<%= datas[i]["hours"][4][0][0] %>"  ></td><td><input type="text" name="fri_stop" id="" value="<%= datas[i]["hours"][4][0][1] %>"></td></tr>
+		
+							<tr><td>saturday</td><td><input type="text" name="sat_start" id="" value="<%= datas[i]["hours"][5][0][0] %>" ></td><td><input type="text" name="sat_stop" id="" value="<%= datas[i]["hours"][5][0][1] %>" ></td></tr>
+							<tr><td>Sunday</td><td><input type="text" name="sun_start" id=""   value="<%= datas[i]["hours"][6][0][0] %>" ></td><td><input type="text" name="sun_stop" id="" value="<%= datas[i]["hours"][6][0][1] %>"></td></tr>
+							
+						</table>
+					</div>
+	
+				
+				</tr>		
+		     
+
+		
+			
+				<tr>
+
+				<div class="row" >
+                    <table>
+						<tr><td>Hours Obj</td></tr>
+						<tr><td>Day</td><td>Open</td><td>Close</td><td>Open 24</td></tr>
+						<tr><td>Monday</td><td><input type="text" name="mon_open" id=""  value="<%= datas[i]["hourObj"][0].open %>" ></td><td><input type="text" name="mon_close" id="" value="<%= datas[i]["hourObj"][0].close %>"></td><td><select name="mon24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Tuesday</td><td><input type="text" name="tue_open" id="" value="<%= datas[i]["hourObj"][1].open %>" ></td><td><input type="text" name="tue_close" id="" value="<%= datas[i]["hourObj"][1].close %>"></td><td><select name="tue24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Wedneday</td><td><input type="text" name="wed_open" id="" value="<%= datas[i]["hourObj"][2].open %>"></td><td><input type="text" name="wed_close" id="" value="<%= datas[i]["hourObj"][2].close %>"></td><td><select name="wed24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Thursday</td><td><input type="text" name="thu_open" id="" value="<%= datas[i]["hourObj"][3].open %>"></td><td><input type="text" name="thu_close" id="" value="<%= datas[i]["hourObj"][3].close %>"></td><td><select name="thu24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Friday</td><td><input type="text" name="fri_open" id="" value="<%= datas[i]["hourObj"][4].open %>"></td><td><input type="text" name="fri_close" id="" value="<%= datas[i]["hourObj"][4].close %>"></td><td><select name="fri24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>saturday</td><td><input type="text" name="sat_open" id="" value="<%= datas[i]["hourObj"][5].open %>" ></td><td><input type="text" name="sat_close" id="" value="<%= datas[i]["hourObj"][5].close %>"></td><td><select name="sat24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+						<tr><td>Sunday</td><td><input type="text" name="sun_open" id="" value="<%= datas[i]["hourObj"][6].open %>"></td><td><input type="text" name="sun_close" id="" value="<%= datas[i]["hourObj"][6].close %>"></td><td><select name="sun24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+
+					</table>
+				</div>
+
+			
+			    </tr>		
+			   
+				
+				</tbody>
+			</table>
+
+
+
+		</div>
+		<div class="modal-footer">
+		  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+		  <button type="submit" class="btn btn-primary">Save changes</button>
+		</div>
+		</form>
+	  </div>
+	</div>
+  </div>
+
+<!-- 
+create modal ends -->
+<%	} %>
+
+
+
+
+
+
+
+
+
+<!-- //////////////////////////////////////////////////////////	 -->
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
