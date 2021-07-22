@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 
 
     console.log('yop');
-    console.log(JSON.parse(data).locations[0].hours[1][0][0]);
+   // console.log(JSON.parse(data).locations.hours[1][0][0]);
   //  res.send(JSON.parse(data).locations);
 
     res.render("index", {datas:JSON.parse(data).locations});  
