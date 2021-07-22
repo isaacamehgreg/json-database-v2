@@ -65,8 +65,8 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
     //console.log(req.body);
       var object = {
         "id": req.body.id,
-        "lat": req.body.lat,
-        "lng": req.body.lng,
+        "lat": parseInt(req.body.lat),
+        "lng": parseInt(req.body.lng),
         "title": req.body.title,
         "name": req.body.name,
         "country": req.body.country,
@@ -135,25 +135,25 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
                 "day": "Monday",
                 "open": req.body.mon_open,
                 "close": req.body.mon_close,
-                "open24": req.body.mon24
+                "open24": JSON.parse(req.body.mon24)
             },
             {
                 "day": "Tuesday",
                 "open": req.body.tue_open,
                 "close": req.body.tue_close,
-                "open24": req.body.tue24
+                "open24": JSON.parse(req.body.tue24)
             },
             {
                 "day": "Wednesday",
                 "open": req.body.wed_open,
                 "close": req.body.wed_close,
-                "open24": req.body.wed24
+                "open24": JSON.parse(req.body.wed24)
             },
             {
                 "day": "Thursday",
                 "open": req.body.thu_open,
                 "close": req.body.thu_close,
-                "open24": req.body.thu24
+                "open24": JSON.parse(req.body.thu24)
             },
             {
                 "day": "Friday",
@@ -165,13 +165,13 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
                 "day": "Saturday",
                 "open": req.body.sat_open,
                 "close": req.body.sat_close,
-                "open24": req.body.sat24
+                "open24": JSON.parse(req.body.sat24)
             },
             {
                 "day": "Sunday",
                 "open": req.body.sun_open,
                 "close": req.body.sun_close,
-                "open24": req.body.sun24
+                "open24": JSON.parse(req.body.sun24)
             }
         ]
       }
@@ -208,8 +208,8 @@ console.log('here')
 
 var object = {
   "id": req.body.id,
-  "lat": req.body.lat,
-  "lng": req.body.lng,
+  "lat": parseInt(req.body.lat),
+  "lng": parseInt(req.body.lng),
   "title": req.body.title,
   "name": req.body.name,
   "country": req.body.country,
@@ -222,50 +222,54 @@ var object = {
   "kiosk_id": req.body.k_id,
   "atmtype": req.body.atmtype,
   "images": [
-       req.body.i1,
-       req.body.i2,
-       req.body.i3,
-       req.body.i4,
-       req.body.i5
+      req.body.i1,
+      req.body.i2,
+      req.body.i3,
+      req.body.i4,
+      req.body.i5
   ],
   "zoom": req.body.zoom,
   "hours": [
       [
           [
-            req.body.mon_start,
-            req.body.mon_stop
-          ],
-          [
-            req.body.tue_start,
-            req.body.tue_stop
-          ],
-          [
-            req.body.wed_start,
-            req.body.wed_stop
+            parseInt(req.body.mon_start),
+            parseInt(req.body.mon_stop)
           ]
       ],
       [
           [
-            req.body.thu_start,
-            req.body.thu_stop
+            parseInt(req.body.tue_start),
+            parseInt(req.body.tue_stop)
+          ]
+      ],
+      [    
+          [
+            parseInt(req.body.wed_start),
+            parseInt(req.body.wed_stop)
           ]
       ],
       [
           [
-            req.body.fri_start,
-            req.body.fri_stop
+            parseInt(req.body.thu_start),
+            parseInt(req.body.thu_stop)
           ]
       ],
       [
           [
-            req.body.sat_start,
-            req.body.sat_stop
+            parseInt(req.body.fri_start),
+            parseInt(req.body.fri_stop)
           ]
       ],
       [
           [
-            req.body.sun_start,
-            req.body.sun_stop
+            parseInt(req.body.sat_start),
+            parseInt(req.body.sat_stop)
+          ]
+      ],
+      [
+          [
+            parseInt(req.body.sun_start),
+            parseInt(req.body.sun_stop)
           ]
       ]
   ],
@@ -274,25 +278,25 @@ var object = {
           "day": "Monday",
           "open": req.body.mon_open,
           "close": req.body.mon_close,
-          "open24": req.body.mon24
+          "open24": JSON.parse(req.body.mon24)
       },
       {
           "day": "Tuesday",
           "open": req.body.tue_open,
           "close": req.body.tue_close,
-          "open24": req.body.tue24
+          "open24": JSON.parse(req.body.tue24)
       },
       {
           "day": "Wednesday",
           "open": req.body.wed_open,
           "close": req.body.wed_close,
-          "open24": req.body.wed24
+          "open24": JSON.parse(req.body.wed24)
       },
       {
           "day": "Thursday",
           "open": req.body.thu_open,
           "close": req.body.thu_close,
-          "open24": req.body.thu24
+          "open24": JSON.parse(req.body.thu24)
       },
       {
           "day": "Friday",
@@ -304,13 +308,13 @@ var object = {
           "day": "Saturday",
           "open": req.body.sat_open,
           "close": req.body.sat_close,
-          "open24": req.body.sat24
+          "open24": JSON.parse(req.body.sat24)
       },
       {
           "day": "Sunday",
           "open": req.body.sun_open,
           "close": req.body.sun_close,
-          "open24": req.body.sun24
+          "open24": JSON.parse(req.body.sun24)
       }
   ]
 }
