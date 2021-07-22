@@ -34,7 +34,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-	create new +
+	(<%=datas.length%>) create new +
   </button>
   
   <!-- Modal -->
@@ -265,14 +265,9 @@ create modal ends -->
 						<table>
 							<tr><td>Hours </td></tr>
 							<tr><td>Day</td><td>start</td><td>stop</td></tr>
-							<tr><td>Monday</td><td><input type="text" name="mon_start" id=""   value="<%= datas[i]["hours"][0][0][0] %>" ></td><td><input type="text" name="mon_stop" id="" value="<%= datas[i]["hours"][0][0][1] %>" ></td></tr>
-							<tr><td>Tuesday</td><td><input type="text" name="tue_start" id=""  value="<%= datas[i]["hours"][1][0][0] %>"  ></td><td><input type="text" name="tue_stop" id="" value="<%= datas[i]["hours"][1][0][1] %>"></td></tr>
-							<tr><td>Wedneday</td><td><input type="text" name="wed_start" id="" value="<%= datas[i]["hours"][2][0][0] %>" ></td><td><input type="text" name="wed_stop" id="" value="<%= datas[i]["hours"][2][0][1] %>" ></td></tr>
-							<tr><td>Thursday</td><td><input type="text" name="thu_start" id="" value="<%= datas[i]["hours"][3][0][0] %>" ></td><td><input type="text" name="thu_stop" id="" value="<%= datas[i]["hours"][3][0][1] %>"></td></tr>
-							<tr><td>Friday</td><td><input type="text" name="fri_start" id=""   value="<%= datas[i]["hours"][4][0][0] %>"  ></td><td><input type="text" name="fri_stop" id="" value="<%= datas[i]["hours"][4][0][1] %>"></td></tr>
+							<tr><td>Monday</td><td><input type="text" name="mon_start" id=""   value="<%= datas[i]['hours'][0][0][0] %>" ></td><td><input type="text" name="mon_stop" id="" value="<%= datas[i]['hours'][0][0][1] %>" ></td></tr>
+					
 		
-							<tr><td>saturday</td><td><input type="text" name="sat_start" id=""  ></td><td><input type="text" name="sat_stop" id="" ></td></tr>
-							<tr><td>Sunday</td><td><input type="text" name="sun_start" id=""    ></td><td><input type="text" name="sun_stop" id="" ></td></tr>
 							
 						</table>
 					</div>
@@ -284,18 +279,11 @@ create modal ends -->
 		
 			
 				<tr>
-
 				<div class="row" >
                     <table>
 						<tr><td>Hours Obj</td></tr>
 						<tr><td>Day</td><td>Open</td><td>Close</td><td>Open 24</td></tr>
-						<tr><td>Monday</td><td><input type="text" name="mon_open" id=""  value="<%= datas[i]["hourObj"][0].open %>" ></td><td><input type="text" name="mon_close" id="" value="<%= datas[i]["hourObj"][0].close %>"></td><td><select name="mon24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
-						<tr><td>Tuesday</td><td><input type="text" name="tue_open" id="" value="<%= datas[i]["hourObj"][1].open %>" ></td><td><input type="text" name="tue_close" id="" value="<%= datas[i]["hourObj"][1].close %>"></td><td><select name="tue24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
-						<tr><td>Wedneday</td><td><input type="text" name="wed_open" id="" value="<%= datas[i]["hourObj"][2].open %>"></td><td><input type="text" name="wed_close" id="" value="<%= datas[i]["hourObj"][2].close %>"></td><td><select name="wed24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
-						<tr><td>Thursday</td><td><input type="text" name="thu_open" id="" value="<%= datas[i]["hourObj"][3].open %>"></td><td><input type="text" name="thu_close" id="" value="<%= datas[i]["hourObj"][3].close %>"></td><td><select name="thu24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
-						<tr><td>Friday</td><td><input type="text" name="fri_open" id="" value="<%= datas[i]["hourObj"][4].open %>"></td><td><input type="text" name="fri_close" id="" value="<%= datas[i]["hourObj"][4].close %>"></td><td><select name="fri24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
-						<tr><td>saturday</td><td><input type="text" name="sat_open" id="" value="<%= datas[i]["hourObj"][5].open %>" ></td><td><input type="text" name="sat_close" id="" value="<%= datas[i]["hourObj"][5].close %>"></td><td><select name="sat24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
-						<tr><td>Sunday</td><td><input type="text" name="sun_open" id="" value="<%= datas[i]["hourObj"][6].open %>"></td><td><input type="text" name="sun_close" id="" value="<%= datas[i]["hourObj"][6].close %>"></td><td><select name="sun24" id=""><option value="true">true</option><option value="false">false</option></select></td></tr>
+
 
 					</table>
 				</div>
