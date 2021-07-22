@@ -21,8 +21,8 @@ app.get('/', function (req, res) {
     if (err) throw err
 
 
-    console.log('yo');
-    console.log(JSON.parse(data).locations[0].hours[0][0][0]);
+    console.log('yop');
+    console.log(JSON.parse(data).locations[0].hours[1][0][0]);
   //  res.send(JSON.parse(data).locations);
 
     res.render("index", {datas:JSON.parse(data).locations});  
@@ -68,8 +68,8 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
     //console.log(req.body);
       var object = {
         "id": req.body.id,
-        "lat": parseInt(req.body.lat),
-        "lng": parseInt(req.body.lng),
+        "lat": parseFloat(req.body.lat),
+        "lng": parseFloat(req.body.lng),
         "title": req.body.title,
         "name": req.body.name,
         "country": req.body.country,
@@ -211,8 +211,8 @@ app.post('/create', urlencodedParser,  (req, res)=>{
 
     var object = {
       "id": req.body.id,
-      "lat": parseInt(req.body.lat),
-      "lng": parseInt(req.body.lng),
+      "lat": parseFloat(req.body.lat),
+      "lng": parseFloat(req.body.lng),
       "title": req.body.title,
       "name": req.body.name,
       "country": req.body.country,
