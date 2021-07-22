@@ -27,6 +27,8 @@ app.get('/', function (req, res) {
   res.render("index", {datas:JSON.parse(all)});  
 })
 
+
+
 //get 1
 app.get('/:id/delete',  urlencodedParser, function (req, res) {
   id= req.params.id
@@ -46,22 +48,18 @@ app.get('/:id/delete',  urlencodedParser, function (req, res) {
       
           // success case, the file was saved
           console.log('record deleted');
+
+          
           res.redirect('/')
         });
       });
-
-
-
  })
 
 
-//post
 
+//post
 app.post('/:id/edit',  urlencodedParser, function (req, res) {
   id= req.params.id
-
-
-   
     //delete old record and replace with the new one
     
     //console.log(req.body);
@@ -183,7 +181,7 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
     all.splice(parseInt(id),1, object )
     //write to json file
     console.log(all)
-        fs.writeFileSync('./all.json', JSON.stringify(all), (err) => {
+      fs.writeFileSync('./all.json', JSON.stringify(all), (err) => {
           // throws an error, you could also catch it here
           if (err) throw err;
 
@@ -191,12 +189,8 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
           console.log('record replaced');
           res.redirect('/')
           });
-
-
       })  
    
-
-
  })
 
 
