@@ -89,40 +89,44 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
         "hours": [
             [
                 [
-                  req.body.mon_start,
-                  req.body.mon_stop
-                ],
-                [
-                  req.body.tue_start,
-                  req.body.tue_stop
-                ],
-                [
-                  req.body.wed_start,
-                  req.body.wed_stop
+                  parseInt(req.body.mon_start),
+                  parseInt(req.body.mon_stop)
                 ]
             ],
             [
                 [
-                  req.body.thu_start,
-                  req.body.thu_stop
+                  parseInt(req.body.tue_start),
+                  parseInt(req.body.tue_stop)
+                ]
+            ],
+            [    
+                [
+                  parseInt(req.body.wed_start),
+                  parseInt(req.body.wed_stop)
                 ]
             ],
             [
                 [
-                  req.body.fri_start,
-                  req.body.fri_stop
+                  parseInt(req.body.thu_start),
+                  parseInt(req.body.thu_stop)
                 ]
             ],
             [
                 [
-                  req.body.sat_start,
-                  req.body.sat_stop
+                  parseInt(req.body.fri_start),
+                  parseInt(req.body.fri_stop)
                 ]
             ],
             [
                 [
-                  req.body.sun_start,
-                  req.body.sun_stop
+                  parseInt(req.body.sat_start),
+                  parseInt(req.body.sat_stop)
+                ]
+            ],
+            [
+                [
+                  parseInt(req.body.sun_start),
+                  parseInt(req.body.sun_stop)
                 ]
             ]
         ],
