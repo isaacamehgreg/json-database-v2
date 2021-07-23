@@ -4,11 +4,15 @@ const fs = require('fs');
 var bodyParser = require('body-parser');
 const { resourceUsage } = require('process');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+const exphbs = require('express-handlebars')
 
+app.use(express.static(__dirname + "/public"));
 
-app.use(express.static("public"));
-
-app.set("view engine",'ejs');
+app.set("view engine","ejs");
+app.engine('hhbs', exphbs({
+     extname:'hbs',
+     defaultLayout:'index'
+}));
 
 
 
@@ -22,13 +26,16 @@ app.get('/', function (req, res) {
 
 
     console.log('yop');
-   // console.log(JSON.parse(data).locations.hours[1][0][0]);
+    console.log(JSON.parse(data).locations);
   //  res.send(JSON.parse(data).locations);
 
     res.render("index", {datas:JSON.parse(data).locations});  
 
    }); 
 })
+
+
+
 
 
 

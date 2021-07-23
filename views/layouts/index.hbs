@@ -1,5 +1,3 @@
-
-  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +34,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-	(<%= datas.length %>) create new +
+	(<%=datas.length%>) create new +
   </button>
   
   <!-- Modal -->
@@ -218,6 +216,7 @@ create modal ends -->
 		<form action="/<%=i%>/edit" method="post">
 		<div class="modal-body">
 		 
+
 			<table>
 				
 				<tbody>
@@ -235,8 +234,10 @@ create modal ends -->
 				<tr><th class="column3">Image</th> <td class="column1"><input type="url" name="image"  value="<%= datas[i].images %>"></td></tr>	
 				<tr><th class="column3">Kiosk_id</th><td class="column1"><input type="text" name="k_id" id=""  value="<%= datas[i].kiosk_id %>" ></td></tr>	
 				<tr><th class="column3">ATM Type</th><td class="column1"><input type="text" name="atmtype" id=""  value="<%= datas[i].atmtype %>"></td></tr>
+
 			 
 					<tr>
+
 						<div class="row" >
 							<table>
 								<tr><td>Images</td></tr>
@@ -246,21 +247,25 @@ create modal ends -->
 								<tr><td>3</td><td><input type="url" name="i3" id=""  value="<%= datas[i]["images"][2] %>"></td></tr>
 								<tr><td>4</td><td><input type="url" name="i4" id=""  value="<%= datas[i]["images"][3] %>"></td></tr>
 								<tr><td>5</td><td><input type="url" name="i5" id=""  value="<%= datas[i]["images"][4] %>"></td></tr>
+
 							</table>
 						</div>
 		
 						
 					
 					</tr>
+
 		
 				<tr><th class="column3">Zoom</th><td><input type="number" name="zoom" id=""  value="<%= datas[i].zoom %>"></td></tr>
 	
+
 				<tr>
+
 					<div class="row" >
 						<table>
 							<tr><td>Hours </td></tr>
 							<tr><td>Day</td><td>start</td><td>stop</td></tr>
-							<tr><td>Monday</td><td><input type="text" name="mon_start" id=""   value="<%= datas[i]['hours'][0][0][0] %>" ></td><td><input type="text" name="mon_stop" id="" value="<%= datas[i]['hours'][0][0][1] %>" ></td></tr>
+							<tr><td>Monday</td><td><input type="text" name="mon_start" id=""   value="<%= datas[i].hours[1][0][1] %>" ></td><td><input type="text" name="mon_stop" id="" value="<%= datas[i].hours[0][0][1] %>" ></td></tr>
 					
 		
 							
@@ -270,6 +275,7 @@ create modal ends -->
 				
 				</tr>		
 		     
+
 		
 			
 				<tr>
@@ -277,14 +283,20 @@ create modal ends -->
                     <table>
 						<tr><td>Hours Obj</td></tr>
 						<tr><td>Day</td><td>Open</td><td>Close</td><td>Open 24</td></tr>
+
+
 					</table>
 				</div>
+
 			
 			    </tr>		
 			   
 				
 				</tbody>
 			</table>
+
+
+
 		</div>
 		<div class="modal-footer">
 		  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
@@ -294,6 +306,7 @@ create modal ends -->
 	  </div>
 	</div>
   </div>
+
 <!-- 
 create modal ends -->
 <%	} %>
