@@ -26,10 +26,10 @@ app.get('/', function (req, res) {
 
 
     console.log('yop');
-    console.log(JSON.parse(data).locations);
-  //  res.send(JSON.parse(data).locations);
+  //  console.log(JSON.parse(data));
+  //  res.send(JSON.parse(data));
 
-    res.render("index", {datas:JSON.parse(data).locations});  
+    res.render("index", {datas:JSON.parse(data)});  
 
    }); 
 })
@@ -47,11 +47,11 @@ app.get('/:id/delete',  urlencodedParser, function (req, res) {
       fs.readFile('./all.json', 'utf-8', (err, data)=>{ // fetch file
           if (err) throw err
         //parse to array
-        var all = JSON.parse(data).locations;
+        var all = JSON.parse(data);
         //delete from array
         all.splice(parseInt(id),1)
         //write to json file
-        console.log(all)
+    //    console.log(all)
         fs.writeFile('./all.json', JSON.stringify(all), (err) => {
           // throws an error, you could also catch it here
           if (err) throw err;
@@ -190,12 +190,12 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
     fs.readFile('./all.json', 'utf-8', (err, data)=>{ // fetch file
       if (err) throw err
     //parse to array
-    var all = JSON.parse(data).locations;
+    var all = JSON.parse(data);
     //replace at same index
     all.splice(parseInt(id),1, object )
     //write to json file
-    console.log(all)
-      fs.writeFileSync('./all.json', JSON.stringify(all), (err) => {
+  //  console.log(all)
+      fs.writeFile('./all.json', JSON.stringify(all), (err) => {
           // throws an error, you could also catch it here
           if (err) throw err;
 
@@ -335,7 +335,7 @@ app.post('/create', urlencodedParser,  (req, res)=>{
 
 
     //parse it to json array 
-    var all = JSON.parse(data).locations;
+    var all = JSON.parse(data);
 
 
     //push
@@ -380,7 +380,7 @@ app.get('/api/all', function (req, res){
 
   fs.readFile('./all.json', 'utf-8', (err, data)=>{ // fetch file
     if (err) throw err
-    res.json(JSON.parse(data).locations)
+    res.json(JSON.parse(data))
   })
 
 
