@@ -261,11 +261,9 @@ create modal ends -->
 							<tr><td>Hours </td></tr>
 							<tr><td>Day</td><td>start</td><td>stop</td></tr>
 							<tr><td>Monday</td><td><input type="text" name="mon_start" id=""  required   value="<%= datas[i]['hours'][0][0][0] %>" ></td><td><input type="text" name="mon_stop" id=""  required   value="<%= datas[i]['hours'][0][0][1] %>" ></td></tr>
-							<%# if(typeof datas[i]["hours"][1][0][0] !== "undefined"  ){ %>
-							<!-- <tr><td>Tuesday</td><td><input type="text" name="tue_start" id=""  value="<%#= datas[i]["hours"][1][0][0] %>"  ></td><td><input type="text" name="tue_stop" id="" value="<%#= datas[i]["hours"][1][0][1] %>"></td></tr> -->
-							<%# } %>
-								<tr><td>Tuesday</td><td><input type="text" name="tue_start" id=""  value=""   required   ></td><td><input type="text" name="tue_stop" id="" value=""></td></tr>
-							<%# } %>
+		
+							<tr><td>Tuesday</td><td><input type="text" name="tue_start" id=""  value="<%#= typeof datas[i]["hours"][1][0][0] != 'undefined' ? datas[i]["hours"][1][0][0] : '' %>"  ></td><td><input type="text" name="tue_stop" id="" value="<%#= typeof datas[i]["hours"][1][0][1] != 'undefined' ? datas[i]["hours"][1][0][1] : '' %>"></td></tr>
+						
 							<tr><td>Wedneday</td><td><input type="text" name="wed_start" id=""   required  value="<%= datas[i]["hours"][2][0][0] %>" ></td><td><input type="text" name="wed_stop" id=""  required   value="<%= datas[i]["hours"][2][0][1] %>" ></td></tr>
 							<tr><td>Thursday</td><td><input type="text" name="thu_start" id=""   required  value="<%= datas[i]["hours"][3][0][0] %>" ></td><td><input type="text" name="thu_stop" id=""  required   value="<%= datas[i]["hours"][3][0][1] %>"></td></tr>
 							<tr><td>Friday</td><td><input type="text" name="fri_start" id=""    required   value="<%= datas[i]["hours"][4][0][0] %>"  ></td><td><input type="text" name="fri_stop" id=""  required   value="<%= datas[i]["hours"][4][0][1] %>"></td></tr>
