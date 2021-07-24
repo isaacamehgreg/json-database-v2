@@ -203,11 +203,11 @@ create modal ends -->
 
 <!-- Button trigger modal -->
 
-<%	for(var i = 0; i< datas.length ; i++   ){  %>
+<%	for(var i = 0; i < datas.length; i++   ){  %>
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter<%=i%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
-	  <div class="modal-content">
+	  <div class="modal-content"> 
 		<div class="modal-header">
 		
 		  <h5 class="modal-title" id="exampleModalCenterTitle"><%= datas[i].name %></h5>
@@ -261,9 +261,9 @@ create modal ends -->
 							<tr><td>Hours </td></tr>
 							<tr><td>Day</td><td>start</td><td>stop</td></tr>
 							<tr><td>Monday</td><td><input type="text" name="mon_start" id=""  required   value="<%= datas[i]['hours'][0][0][0] %>" ></td><td><input type="text" name="mon_stop" id=""  required   value="<%= datas[i]['hours'][0][0][1] %>" ></td></tr>
-							<%# if(datas[i]["hours"][1][0][0] != null  ){ %>
+							<%# if(typeof datas[i]["hours"][1][0][0] !== "undefined"  ){ %>
 							<!-- <tr><td>Tuesday</td><td><input type="text" name="tue_start" id=""  value="<%#= datas[i]["hours"][1][0][0] %>"  ></td><td><input type="text" name="tue_stop" id="" value="<%#= datas[i]["hours"][1][0][1] %>"></td></tr> -->
-							<%# }else{ %>
+							<%# } %>
 								<tr><td>Tuesday</td><td><input type="text" name="tue_start" id=""  value=""   required   ></td><td><input type="text" name="tue_stop" id="" value=""></td></tr>
 							<%# } %>
 							<tr><td>Wedneday</td><td><input type="text" name="wed_start" id=""   required  value="<%= datas[i]["hours"][2][0][0] %>" ></td><td><input type="text" name="wed_stop" id=""  required   value="<%= datas[i]["hours"][2][0][1] %>" ></td></tr>
