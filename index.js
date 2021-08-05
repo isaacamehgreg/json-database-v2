@@ -25,11 +25,11 @@ app.get('/', function (req, res) {
     if (err) throw err
 
 
-    console.log('yop');
-  //  console.log(JSON.parse(data));
-  //  res.send(JSON.parse(data));
+    //console.log(data);
+     console.log(JSON.parse(data).locations);
+  //res.send(JSON.parse(data).locations);
 
-    res.render("index", {datas:JSON.parse(data)});  
+    res.render("index", {datas:JSON.parse(data).locations});  
 
    }); 
 })
@@ -47,12 +47,15 @@ app.get('/:id/delete',  urlencodedParser, function (req, res) {
       fs.readFile('./all.json', 'utf-8', (err, data)=>{ // fetch file
           if (err) throw err
         //parse to array
-        var all = JSON.parse(data);
+        var all = JSON.parse(data).locations;
         //delete from array
         all.splice(parseInt(id),1)
+
+        var newData = { locations:all}
+
         //write to json file
     //    console.log(all)
-        fs.writeFile('./all.json', JSON.stringify(all), (err) => {
+        fs.writeFile('./all.json', JSON.stringify(newData), (err) => {
           // throws an error, you could also catch it here
           if (err) throw err;
       
@@ -190,12 +193,14 @@ app.post('/:id/edit',  urlencodedParser, function (req, res) {
     fs.readFile('./all.json', 'utf-8', (err, data)=>{ // fetch file
       if (err) throw err
     //parse to array
-    var all = JSON.parse(data);
+    var all = JSON.parse(data).locations;
     //replace at same index
     all.splice(parseInt(id),1, object )
     //write to json file
+
+    var newData = { locations:all}
   //  console.log(all)
-      fs.writeFile('./all.json', JSON.stringify(all), (err) => {
+      fs.writeFile('./all.json', JSON.stringify(newData), (err) => {
           // throws an error, you could also catch it here
           if (err) throw err;
 
@@ -336,15 +341,17 @@ app.post('/create', urlencodedParser,  (req, res)=>{
 
 
     //parse it to json array 
-    var all = JSON.parse(data);
+    var all = JSON.parse(data).locations;
 
 
     //push
     all.push(object);  
 
+    var newData = { locations:all}
+
     //write to file the new object after stringifying
 
-        fs.writeFile('./all.json', JSON.stringify(all), (err) => {
+        fs.writeFile('./all.json', JSON.stringify(newData), (err) => {
           // throws an error, you could also catch it here
           if (err) throw err;
       
@@ -398,4 +405,4 @@ app.get('/api/all', function (req, res){
 
 
 
-app.listen( process.env.PORT || '5000');
+app.listen( process.env.PORT || 8000);
